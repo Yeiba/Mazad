@@ -42,9 +42,5 @@ if it error you need this pack on package.json
 
 
 
-// git init
 
-// git config --global user.name "Yeiba"
-
-// git config --global user.email "yeibayalda@gmail.com"
 
