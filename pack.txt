@@ -1,0 +1,42 @@
+store
+npm i @prisma/client @stripe/stripe-js @supabase/auth-helpers-nextjs @supabase/auth-helpers-react @supabase/auth-ui-react @supabase/auth-ui-shared @supabase/supabase-js debounce moment react-icons react-responsive-carousel react-toastify stripe prisma
+livestreaming
+npm i appwrite image-js moment react-advanced-cropper zustand @types/debounce canvas raw-loader
+
+
+
+npx prisma init  {new prisma file + create seed.js inside}
+
+.env {create file .env }
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+DATABASE_URL=
+
+npx prisma migrate dev --name init  {supabase.com => authentication => policies => _prisma_migrations => enable RLS }
+
+npx prisma generate
+
+npx prisma db seed
+
+to update schema:
+
+npx prisma migrate dev  
+npx prisma db push 
+
+import { PrismaClient } from '@prisma/client'
+const prisma = new PrismaClient()
+```
+or start using Prisma Client at the edge (See: https://pris.ly/d/accelerate)
+```
+import { PrismaClient } from '@prisma/client/edge'
+const prisma = new PrismaClient()
+
+npx prisma db seed
+
+if it error you need this pack on package.json
+
+"prisma": {
+    "seed": "node prisma/seed.js"
+  },
+
+
